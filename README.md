@@ -1,7 +1,7 @@
 Nina
 ====
 
-Nina is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
+[Nina][3] is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
 Sinatra, such as an abstract, pluggable, and extensible infrastructure.
 
 Features
@@ -104,4 +104,10 @@ Copyright
 
 Copyright (c) 2010, Dotan Nahum <dotan@paracode.com>
     
-     
+
+
+[1]: http://github.com/jondot/nina
+[2]: http://github.com/jondot/nina/issues
+[3]: http://jondot.github.com/nina
+
+    
