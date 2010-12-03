@@ -9,14 +9,14 @@
 #endregion
 using System;
 using System.Web.Routing;
-using AddressBook.Services;
+using AddressBook.Contacts;
 using Nina.Configuration;
 using Nina.Routing;
 using Nina.ViewEngines.NHaml;
 using Nina.ViewEngines.Spark;
 using Nina.ViewEngines.NDjango;
 
-namespace Nina.AddressBook.Services
+namespace Nina.AddressBook.Contacts
 {
 	public class Global : System.Web.HttpApplication
 	{

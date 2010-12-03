@@ -10,13 +10,10 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-// ReSharper disable RedundantUsingDirective
-using Nina.Helpers;
-// ReSharper restore RedundantUsingDirective
 using Nina.Support;
 
 
-namespace AddressBook.Services
+namespace AddressBook.Contacts
 {
     
 	public class Contacts : Nina.Application
