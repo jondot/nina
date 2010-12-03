@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/960_24_col.css"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>  
-    
-
 </head>
 <body>
 <div class="container_24">
@@ -44,7 +42,25 @@
     <div class="grid_20 body alpha omega">
         <div>
         <br/><br/><br/><br/>
-        <h1 id='restful'>RESTful</h1>
+        <h1 id='nina'>Nina</h1>
+
+<p><span>Nina</span> is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond Sinatra, such as an abstract, pluggable, and extensible infrastructure.</p>
+
+<p>In terms of features:</p>
+
+<ul>
+<li>A simple to use DSL, a simple programming model.</li>
+
+<li>Performance as a goal.</li>
+
+<li>Multiple pluggable view engines.</li>
+
+<li>Many scenarios covered by Json and XML serialization support.</li>
+
+<li>Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.</li>
+</ul>
+
+<h1 id='restful'>RESTful</h1>
 
 <p>Nina keeps REST easy, as it was planned to be. Supporting all verbs, through native</p>
 <div class="CodeRay">
@@ -70,7 +86,53 @@
 
 <h1 id='get_started'>Get Started</h1>
 
-<p>in progress.</p>
+<p>A tutorial is in progress. As well as blog-series explaining Nina&#8217;s underpinnings (no pun intended). For now there are several examples for using Nina:</p>
+
+<ul>
+<li>To quickly get started, you can take TinyUrl demo as a project per-se and start hacking from there.</li>
+
+<li>To see a full-fledged real world application, check out Panda: a Nina-powered web log, backed with MongoDB with slugs, tagging and comments (disqus).</li>
+</ul>
+
+<h1 id='the_tinyurl_example'>The TinyUrl Example</h1>
+
+<p>Here is a self-contained <em>complete</em> Nina application, for a tiny url website. Nice, isn&#8217;t it? Check out <code>Nina.Demo.Tinyurl</code> to play with it live.</p>
+<div class="CodeRay">
+  <div class="code"><pre><span class="c">//TinyUrl.cs</span>&#x000A;<span class="r">public</span> <span class="r">class</span> TinyUrl : Nina.Application&#x000A;{&#x000A;    <span class="r">private</span> <span class="r">static</span> <span class="r">readonly</span> Urls Urls = <span class="r">new</span> Urls();&#x000A;    <span class="r">public</span> TinyUrl()&#x000A;    {&#x000A;        Get(<span class="s"><span class="dl">&quot;</span><span class="k">/</span><span class="dl">&quot;</span></span>, (m,c) =&gt; Text(<span class="s"><span class="dl">@&quot;</span><span class="k">&lt;html&gt;&lt;body&gt;Tiny url!&#x000A;                                &lt;form method='post'&gt;&#x000A;                                &lt;input type='text' name='url'/&gt;&#x000A;                                &lt;input type='submit' value='tiny!'/&gt;&#x000A;                                &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="dl">&quot;</span></span>));&#x000A;        &#x000A;        Post(<span class="s"><span class="dl">&quot;</span><span class="k">/</span><span class="dl">&quot;</span></span>, (m,c)=&gt;&#x000A;        {&#x000A;            <span class="r">var</span> url = Urls.Save(c.Request.Form[<span class="s"><span class="dl">&quot;</span><span class="k">url</span><span class="dl">&quot;</span></span>]);&#x000A;            <span class="r">return</span> Text(<span class="pt">string</span>.Format(<span class="s"><span class="dl">@&quot;</span><span class="k">&lt;html&gt;&lt;body&gt;Your url: &#x000A;                                        &lt;a href='{0}'&gt;{0}&lt;/a&gt;&#x000A;                                        &lt;/body&gt;&lt;/html&gt;</span><span class="dl">&quot;</span></span>,&#x000A;                                        c.Request.Url +url));&#x000A;        });&#x000A;&#x000A;        Get(<span class="s"><span class="dl">&quot;</span><span class="k">/{tinyurl}</span><span class="dl">&quot;</span></span>, (m, c) =&gt; Redirect(Urls.Get(m[<span class="s"><span class="dl">&quot;</span><span class="k">tinyurl</span><span class="dl">&quot;</span></span>])) );&#x000A;    }&#x000A;}&#x000A;&#x000A;<span class="r">public</span> <span class="r">class</span> Urls&#x000A;{&#x000A;    <span class="r">private</span> <span class="r">readonly</span> List&lt;<span class="pt">string</span>&gt; _urls = <span class="r">new</span> List&lt;<span class="pt">string</span>&gt;();&#x000A;&#x000A;    <span class="r">public</span> <span class="pt">string</span> Save(<span class="pt">string</span> s)&#x000A;    {&#x000A;        _urls.Add(s);&#x000A;        <span class="r">return</span> (_urls.Count-<span class="i">1</span>).ToString();&#x000A;    }&#x000A;    <span class="r">public</span> <span class="pt">string</span> Get(<span class="pt">string</span> u)&#x000A;    {&#x000A;        <span class="r">var</span> i = <span class="pt">int</span>.Parse(u);&#x000A;        <span class="r">return</span> _urls[i];&#x000A;    }&#x000A;}&#x000A;</pre></div>
+</div>
+<h1 id='future_plans'>Future Plans</h1>
+
+<p>Currently Nina is feature complete. It should cover most of the scenarios building RESTful web applications. However, I do have several more extras on the way which are always welcome</p>
+
+<ul>
+<li>Initiate a testing roadmap that will not affect Nina&#8217;s performance.</li>
+
+<li>Add view engines.</li>
+
+<li>Add tooling support (NuGet)</li>
+</ul>
+
+<h1 id='contribute'>Contribute</h1>
+
+<p>Nina is an open-source project. Therefore you are free to help improving it. There are several ways of contributing to Nina&#8217;s development:</p>
+
+<ul>
+<li>Build apps using Nina and spread the word.</li>
+
+<li>Bug and features using the <a href='http://github.com/jondot/nina/issues'>issue tracker</a>.</li>
+
+<li>Submit patches fixing bugs and implementing new functionality.</li>
+
+<li>Create a Nina fork on <a href='http://github.com/jondot/nina'>GitHub</a> and start hacking. Extra points for using GitHubs pull requests and feature branches.</li>
+</ul>
+
+<h1 id='license'>License</h1>
+
+<p>This code is free software; you can redistribute it and/or modify it under the terms of the Apache License. See LICENSE.txt.</p>
+
+<h1 id='copyright'>Copyright</h1>
+
+<p>Copyright (c) 2010, Dotan Nahum <a href='mailto:dotan@paracode.com'>&#100;&#111;&#116;&#097;&#110;&#064;&#112;&#097;&#114;&#097;&#099;&#111;&#100;&#101;&#046;&#099;&#111;&#109;</a></p>
 
         </div>
         <div style="clear:both"></div>
@@ -82,7 +144,6 @@
 
         
 </div>
-
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-7131053-4']);
