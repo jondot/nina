@@ -31,7 +31,7 @@ Friendly
 Inspired by Sinatra, Nina has a compact and friendly DSL that you'll like from the start.   
     
     
-    Post("/", (m,c)=>;
+    Post("/", (m,c)=>
     {
       var url = Urls.Save(c.Request.Form["url"]);
       return Text(string.Format(@"<html><body>Your url: 
@@ -60,7 +60,11 @@ To put it into numbers, here is the typical string rendering benchmark.
 Get Started
 -----------
 
-in progress.
+A tutorial is in progress. As well as blog-series explaining Nina's underpinnings (no pun intended).
+For now there are several examples for using Nina:
+
+* To quickly get started, you can take TinyUrl demo as a project per-se and start hacking from there.
+* To see a full-fledged real world application, check out Panda: a Nina-powered web log, backed with MongoDB with slugs, tagging and comments (disqus).
 
 
 
