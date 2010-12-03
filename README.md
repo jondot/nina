@@ -1,5 +1,20 @@
+Nina
+====
+
+Nina is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
+Sinatra, such as an abstract, pluggable, and extensible infrastructure.
+
+Features
+--------
+
+* A simple to use DSL, a simple programming model.
+* Performance as a goal.
+* Multiple pluggable view engines.
+* Many scenarios covered by Json and XML serialization support.
+* Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.
+
 RESTful 
-=======
+-------
 
 Nina keeps REST easy, as it was planned to be. Supporting all verbs, through native
 
@@ -11,7 +26,8 @@ Nina keeps REST easy, as it was planned to be. Supporting all verbs, through nat
     
 
 Friendly
-========
+--------
+
 Inspired by Sinatra, Nina has a compact and friendly DSL that you'll like from the start.   
     
     
@@ -29,7 +45,7 @@ Nina lets you worry about your own code by giving you less decisions to make. In
     
 
 Performant
-==========
+----------
 
 Under the hood, Nina is a highly optimized microframework with
 comprehensive features and a neat DSL.
@@ -42,7 +58,46 @@ To put it into numbers, here is the typical string rendering benchmark.
     
    
 Get Started
-===========
+-----------
+
 in progress.
+
+
+
+
+
+
+Future plans
+------------
+
+Currently Nina is feature complete. It should cover most of the scenarios building RESTful web applications.
+However, I do have several more extras on the way which are always
+
+* Initiate a testing roadmap that will not affect Nina's performance.
+* Add view engines.
+* Add tooling support (NuGet)
+
+
+Contribute
+----------
+
+Nina is an open-source project. Therefore you are free to help improving it.
+There are several ways of contributing to Nina's development:
+
+* Build apps using Nina and spread the word.
+* Bug and features using the [issue tracker][2].
+* Submit patches fixing bugs and implementing new functionality.
+* Create a Nina fork on [GitHub][1] and start hacking. Extra points for using GitHubs pull requests and feature branches.
+
+License
+-------
+
+This code is free software; you can redistribute it and/or modify it under the
+terms of the Apache License. See LICENSE.txt.
+
+Copyright
+---------
+
+Copyright (c) 2010, Dotan Nahum <dotan@paracode.com>
     
-    
+     
