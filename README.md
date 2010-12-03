@@ -1,7 +1,7 @@
 Nina
 ====
 
-[Nina][3] is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
+[Nina][3] is a *feature complete* web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go further beyond
 Sinatra, such as an abstract, pluggable, and extensible infrastructure.
 
 Features
