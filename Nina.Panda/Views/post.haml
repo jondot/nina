@@ -1,0 +1,17 @@
+﻿.postzoom
+  %h2.title= ViewData.Post.Title
+  %p.meta
+    %small= ViewData.Post.LinkedTags
+  %p.meta= ViewData.Post.Created
+  .entry= ViewData.Post.BodyHtml
+  - if(ViewData.User.IsAdmin)
+    .edit
+      %a{href = "#{ViewData.Post.Url}/edit"}= "edit"
+- if(ViewData.Blog.DisqusName != null)
+  .disqus_thread
+    %script{type = "text/javascript" src = "http://disqus.com/forums/%{ViewData.Blog.DisqusName}/embed.js"}
+    %noscript
+      %a{href = "http://#{ViewData.Blog.DisqusName}.disqus.com/?url=ref"}= "View the discussion thread."
+      %a.dsq-brlink(href = "http://disqus.com")
+        blog comments powered by
+        %span.logo-disqus Disqus

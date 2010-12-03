@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB9C738A-0A1E-4FC7-9AB0-62623093A437}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nina</RootNamespace>
+    <AssemblyName>Nina</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Json.NET-3.5r8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Results\Meta\NonETaggedResult.cs" />
+    <Compile Include="Results\Pipeline\BeforeFilterResult.cs" />
+    <Compile Include="Results\Meta\ETaggedResult.cs" />
+    <Compile Include="Results\Http\HttpCreatedResult.cs" />
+    <Compile Include="Results\RenderedResult.cs" />
+    <Compile Include="Support\Digest.cs" />
+    <Compile Include="Filters\Meta\ETagFilter.cs" />
+    <Compile Include="Support\Filters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\ResourceResult.cs" />
+    <Compile Include="Configuration\Configure.cs" />
+    <Compile Include="Results\Content\FileContentResult.cs" />
+    <Compile Include="Results\Content\FileResult.cs" />
+    <Compile Include="Results\Serialization\JsonResult.cs" />
+    <Compile Include="Results\NullResult.cs" />
+    <Compile Include="Results\Http\RedirectResult.cs" />
+    <Compile Include="Results\Content\TextResult.cs" />
+    <Compile Include="Results\Http\StatusResult.cs" />
+    <Compile Include="Filters\IFilter.cs" />
+    <Compile Include="Internal\IO\IgnoreCloseStream.cs" />
+    <Compile Include="Filters\Meta\LastModifiedFilter.cs" />
+    <Compile Include="Utils\CRC32.cs" />
+    <Compile Include="ViewEngines\ITemplate.cs" />
+    <Compile Include="ViewEngines\TemplateEngine.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.cs" />
+    <Compile Include="Routing\MountingPoint.cs" />
+    <Compile Include="Routing\MountedRouteHandler.cs" />
+    <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="ApplicationException.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Routing\NinaBaseHandler.cs" />
+    <Compile Include="Results\ViewEngines\ViewResult.cs" />
+    <Compile Include="Results\Serialization\XmlResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)..\bin\RestCake\" /Y
+del "$(SolutionDir)..\bin\RestCake\*.manifest"
+del "$(SolutionDir)..\bin\RestCake\*vshost*"
+del "$(SolutionDir)..\bin\RestCake\*.tmp"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

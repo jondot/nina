@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NHaml</name>
+    </assembly>
+    <members>
+        <member name="M:NHaml.ProxyExtracter.GetNonProxiedType(System.Type)">
+            <summary>
+            Do a best guess on getting a non dynamic <see cref="T:System.Type"/>.
+            </summary>
+            <remarks>
+            This is necessary for libraries like nhibernate that use proxied types.
+            </remarks>
+        </member>
+        <member name="M:NHaml.TemplateResolution.ITemplateContentProvider.GetViewSource(System.String)">
+            <summary>
+            Builds and returns a representation of a view template
+            </summary>
+            <param name="templateName">The template name</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHaml.TemplateResolution.ITemplateContentProvider.GetViewSource(System.String,System.Collections.Generic.IList{NHaml.TemplateResolution.IViewSource})">
+            <summary>
+            Builds and returns a representation of a view template
+            </summary>
+            <param name="templatePath">The template path.</param>
+            <param name="parentViewSourceList">The parent view source list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHaml.TemplateResolution.ITemplateContentProvider.AddPathSource(System.String)">
+            <summary>
+            Adds the path source.
+            </summary>
+            <param name="pathSource">The path source.</param>
+        </member>
+        <member name="P:NHaml.TemplateResolution.ITemplateContentProvider.PathSources">
+            <summary>
+            Gets a list of path sources
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:NHaml.TemplateResolution.FileTemplateContentProvider.AddPathSource(System.String)">
+            <remarks>The path is assumed to be relative to the AppDoamin BaseDirectory.</remarks>
+        </member>
+        <member name="T:NHaml.TemplateResolution.FileViewSource">
+            <summary>
+            Represents a view template source on the file system.
+            </summary>
+        </member>
+        <member name="T:NHaml.TemplateResolution.IViewSource">
+            <summary>
+            Represents a view template source
+            </summary>
+        </member>
+        <member name="M:NHaml.TemplateResolution.IViewSource.GetStreamReader">
+            <summary>
+            Opens the view stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NHaml.TemplateResolution.FileViewSource.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHaml.TemplateResolution.FileViewSource"/> class.
+            </summary>
+            <param name="fileInfo">The file info.</param>
+        </member>
+        <member name="P:NHaml.TemplateOptions.MarkupRules">
+            <summary>
+            </summary>
+            <remarks>
+            Use <see cref="M:NHaml.TemplateOptions.AddRule(NHaml.Rules.MarkupRule)"/> to add new rules
+            </remarks>
+        </member>
+    </members>
+</doc>

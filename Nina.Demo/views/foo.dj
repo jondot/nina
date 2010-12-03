@@ -1,0 +1,3 @@
+﻿hello
+{{ViewData.Date}}
+{{ViewData.Foo}}

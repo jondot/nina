@@ -1,0 +1,117 @@
+﻿/*
+ *  todos:
+ *  X 404 page: code and configuration point.
+ *  X static file
+ *  X change : Nina to : Nina.Application
+ *  X JSON result, XML result, TEXT result (non-template), Null result (redirection, etc)
+ *  X POST
+ *  - physical template path - resolve
+ *  X cleanup - restcake etc.
+ *  X ETags
+ *  - self-optimizing Blocks list. re-order the list by most accessed url every X requests.
+ * *  2 ways;
+ *      1. every object can implement IVersionable.
+ *          if it is, we do IVersionable#Version()
+ *          otherwise we disregard etag.
+ *      2. for the usecase where we cannot change object hierarchy, we do
+ *              Get("sdfsdf", (m,c)   =>   Render("sdfs", ETagged(obj)); where T is IETagger#GetVersion )
+ *   - cache control
+ *       def last_modified(time)
+      return unless time
+      time = time.to_time if time.respond_to?(:to_time)
+      time = Time.parse time.strftime('%FT%T%:z') if time.respond_to?(:strftime)
+      response['Last-Modified'] = time.respond_to?(:httpdate) ? time.httpdate : time.to_s
+      halt 304 if Time.httpdate(request.env['HTTP_IF_MODIFIED_SINCE']) >= time
+    rescue ArgumentError
+    end
+ *   - replace RestCake project guids
+ *   - mimetype detection              
+ * 
+ *  - demo: mongo gui
+ *  https://github.com/Sirupsen/Mongui
+ *  - demo: wiki
+ *  https://github.com/semanticart/hoboken
+ *  https://github.com/bomberstudios/sinatra_wiki/blob/master/sinatra_wiki.rb
+ *  - demo: pastie 
+ *  https://github.com/zapnap/toopaste/blob/master/toopaste.rb
+ *  - demo: blog (partial views)
+ *  https://github.com/moomerman/frog
+ *  https://github.com/madx/haze/blob/master/lib/haze.rb
+ *  - ? demo content type and ajax
+ *  - irc quotes, voting
+ *  https://github.com/tatey/quotes/blob/master/application.rb
+ *  
+ * IT: 
+ * - google analytics
+ * - kissinsight?
+ * http://www.kissinsights.com/?utm_source=suview&utm_medium=dark&utm_campaign=tripwireapp.com&r=12999
+ * 
+ */
+
+
+
+
+ /*
+ * 
+ 
+ *perf
+ *running from IIS (not from VS)
+ *D:\xampp\apache\bin>ab -n 1000 http://localhost:8080/va/contacts/book
+This is ApacheBench, Version 2.0.40-dev <$Revision: 1.146 $> apache-2.0
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Copyright 2006 The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Finished 1000 requests
+
+
+Server Software:        Microsoft-IIS/5.1
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /va/contacts/book
+Document Length:        5 bytes
+
+Concurrency Level:      1
+Time taken for tests:   0.843750 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      223000 bytes
+HTML transferred:       5000 bytes
+Requests per second:    1185.19 [#/sec] (mean)
+Time per request:       0.844 [ms] (mean)
+Time per request:       0.844 [ms] (mean, across all concurrent requests)
+Transfer rate:          257.19 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   1.2      0      15
+Processing:     0    0   3.2      0      15
+Waiting:        0    0   3.0      0      15
+Total:          0    0   3.4      0      15
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      0
+  95%     15
+  98%     15
+  99%     15
+ 100%     15 (longest request)
+ * 
+ * 
+ *  sinatra: 570req/s
+ * 
+ */

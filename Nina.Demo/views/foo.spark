@@ -1,0 +1,12 @@
+﻿<html>
+  <body>
+<div>
+  <p>The time is ${ViewData.Date}.</p>
+</div>
+<ul>
+  <li each='var p in ViewData.Items'>
+    ${p}
+  </li>
+</ul>
+  </body>
+</html>
