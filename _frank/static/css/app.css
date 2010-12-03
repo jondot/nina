@@ -1,0 +1,120 @@
+.main
+{
+    background: #fcf5e8 url(../images/b.png) repeat-x; 
+    position:relative;
+    height:460px;
+}
+
+body
+{
+    background:#cecac0;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    color:#333;
+    text-shadow:0 1px 0 #FFFFFF;
+}
+.n 
+{ 
+    position:absolute;
+    left:70px;
+    z-index:1;
+}
+.nl
+{ 
+    position:absolute;
+    left:300px;
+    top:64px;
+    z-index:999;
+}
+.sr
+{
+    position:absolute;
+    left:130px;
+    top:210px;
+    z-index:999;
+}
+.body
+{   
+    background:#fcf5e8;
+}
+
+.body > div
+{
+    padding: 0 70px;
+}
+h1
+{
+    color: #0F3C5D;
+    font-size:2em;
+    font-weight:bold;
+    margin:2em 0 .25em 0;
+}
+.weak
+{
+    color:#cecac0;
+}
+
+code
+{
+    font-family:consolas,courier-new,monospace,serif;
+}
+pre
+{
+    font-family:consolas,courier-new,monospace,serif;
+    background:#111;
+    color: #fff;
+    -moz-border-radius:20px;
+    padding:2em;
+    text-shadow:0 1px 0 #000;
+}
+
+.str
+{
+    color: #99ff22;
+}
+.kwrd
+{
+    color:orange;
+}
+#t 
+{ 
+    background: url('../images/t.png') no-repeat;
+    width:208px;
+    height:54px;
+    z-index:900;
+    position: absolute;
+    top:345px;
+    left:295px;
+    line-height:54px;
+    color:#335b0f;
+    font-weight:bold;
+    
+    text-shadow: 0px 1px 1px #e4fad3;
+    text-align:center;
+}
+#t a { color:#335b0f; text-decoration:none;}
+#t a:hover{ color:#25420b;}
+    
+
+
+      
+   .CodeRay .an { color:#E7BE69 }                      /* html attribute */  
+   .CodeRay .c  { color:#BC9358; font-style: italic; } /* comment */  
+   .CodeRay .ch { color:#509E4F }                      /* escaped character */  
+   .CodeRay .cl { color:#FFF }                         /* class */  
+   .CodeRay .co { color:#FFF }                         /* constant */  
+  .CodeRay .fl { color:#A4C260 }                      /* float */  
+  .CodeRay .fu { color:#FFC56D }                      /* function */  
+  .CodeRay .gv { color:#D0CFFE }                      /* global variable */  
+  .CodeRay .i  { color:#A4C260 }                      /* integer */  
+  .CodeRay .il { background:#151515 }                 /* inline code */  
+  .CodeRay .iv { color:#D0CFFE }                      /* instance variable */  
+  .CodeRay .pp { color:#E7BE69 }                      /* doctype */  
+  .CodeRay .r  { color:#CB7832 }                      /* keyword */  
+  .CodeRay .rx { color:#A4C260 }                      /* regex */  
+  .CodeRay .s  { color:#A4C260 }                      /* string */  
+  .CodeRay .sy { color:#6C9CBD }                      /* symbol */  
+  .CodeRay .ta { color:#E7BE69 }                      /* html tag */  
+  .CodeRay .pc { color:#6C9CBD }                      /* boolean */  
+  
+ p { margin:1em 0;}
