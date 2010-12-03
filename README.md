@@ -13,6 +13,35 @@ Features
 * Many scenarios covered by Json and XML serialization support.
 * Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.
 
+To put some code into words:
+
+    Get("book.xml", (m, c) =>
+    {
+        Filters.ETag("8");
+        return Xml(new Model());
+    });
+
+    Get("etagged/crc/book.xml", (m, c) =>
+    {
+        return Xml(new Model()).ETagged();
+    });
+
+    Get("etagged/md5/book.xml", (m, c) =>
+    {
+        return Xml(new Model()).ETagged(Digest.MD5);
+    });
+    
+    Get("etagged/text", (m, c) =>
+    {
+        return Text("thanks").ETagged();     
+    });
+        
+    Get("book/{name}", (m, c) =>
+    {
+        return View("views/foo", new Model()).Created(c.Request.Url.ToString()).ETagged();
+    });        
+    
+    
 RESTful 
 -------
 
