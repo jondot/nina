@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Nina.AddressBook.Services.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Nina.Demo.Global" Language="C#" %>

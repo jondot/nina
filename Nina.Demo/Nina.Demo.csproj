@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nina.Demo</RootNamespace>
     <AssemblyName>Nina.Demo</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -44,6 +44,9 @@
     <Reference Include="System" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -76,6 +79,10 @@
       <Project>{6164594C-298B-4F12-8692-BA2B2EAA6B80}</Project>
       <Name>Nina.ViewEngines.NHaml</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nina.ViewEngines.Razor\Nina.ViewEngines.Razor.csproj">
+      <Project>{DF2EAA8E-8527-43D0-8B6D-73F999287DC7}</Project>
+      <Name>Nina.ViewEngines.Razor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nina.ViewEngines.Spark\Nina.ViewEngines.Spark.csproj">
       <Project>{E7DBDE01-1AF1-40BF-9D09-586B96FB78F1}</Project>
       <Name>Nina.ViewEngines.Spark</Name>
@@ -100,6 +107,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="views\foo.cshtml" />
     <None Include="views\foo.dj" />
     <None Include="views\foo.haml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
