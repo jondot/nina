@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Nina
 ====
 
@@ -13,6 +12,7 @@ Features
 * Multiple pluggable view engines.
 * Many scenarios covered by Json and XML serialization support.
 * Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.
+* Nina is _intentionally_ build against the .Net 2.0 in order to afford a lower barrier of entry!. A port of Nina for the 4.0 runtime will be available shortly.
 
 To put some code into words:
 
