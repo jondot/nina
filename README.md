@@ -1,9 +1,10 @@
-<<<<<<< HEAD
 Nina
 ====
 
 [Nina][3] is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
 Sinatra, such as an abstract, pluggable, and extensible infrastructure.
+
+An important note is that Nina is feature complete. Meaning that unlike open source projects that forge themselves online, it was brewed for a while _before_ opening up to public. Its API stable and well thought out, Nina will not be a moving target for you, and you can count on it.
 
 Features
 --------
@@ -13,6 +14,7 @@ Features
 * Multiple pluggable view engines.
 * Many scenarios covered by Json and XML serialization support.
 * Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.
+* Nina is _intentionally_ build against the .Net 2.0 runtime in order to afford a lower barrier of entry!. A port of Nina for the 4.0 runtime will be available shortly.
 
 To put some code into words:
 
@@ -83,9 +85,13 @@ comprehensive features and a neat DSL.
 To put it into numbers, here is the typical string rendering benchmark.
     
     
-    Requests per second:    2385.19 [#/sec] (mean)<br/>
-    Time per request:       0.544 [ms] (mean)
+    Nina/.NET2.0, IIS 
+    Requests per second:    2385.19 [#/sec] (mean)
     
+    Sinatra/Ruby1.8.7, Thin 
+    Requests per second:    588.33 [#/sec] (mean)
+    
+Although benchmark comparisons are evil, biased, and so forth, it does give a good feel about running a lightweight framework on windows and IIS.
    
 Get Started
 -----------
