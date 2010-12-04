@@ -83,9 +83,13 @@ comprehensive features and a neat DSL.
 To put it into numbers, here is the typical string rendering benchmark.
     
     
-    Requests per second:    2385.19 [#/sec] (mean)<br/>
-    Time per request:       0.544 [ms] (mean)
+    Nina/.NET2.0, IIS 
+    Requests per second:    2385.19 [#/sec] (mean)
     
+    Sinatra/Ruby1.8.7, Thin 
+    Requests per second:    588.33 [#/sec] (mean)
+    
+Although benchmark comparisons are evil, biased, and so forth, it does give a good feel about running a lightweight framework on windows and IIS.
    
 Get Started
 -----------
