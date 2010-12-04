@@ -4,6 +4,8 @@ Nina
 [Nina][3] is a web microframework for the .Net platform, inspired by Sinatra. It includes several aspects that go futher beyond
 Sinatra, such as an abstract, pluggable, and extensible infrastructure.
 
+An important note is that Nina is feature complete. Meaning that unlike open source projects that forge themselves online, it was brewed for a while _before_ opening up to public. Its API stable and well thought out, Nina will not be a moving target for you, and you can count on it.
+
 Features
 --------
 
