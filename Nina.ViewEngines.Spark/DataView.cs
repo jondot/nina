@@ -15,6 +15,7 @@ namespace Nina.ViewEngines.Spark
     public abstract class DataView<T> : AbstractSparkView
     {
         public T ViewData { get; set; }
+        public T Model { get { return ViewData; } }
         public override void Render()
         {
             throw new NotImplementedException();

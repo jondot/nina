@@ -31,22 +31,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RazorEngine.Core">
+      <HintPath>..\lib\RazorEngine\RazorEngine.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine.Templates">
+      <HintPath>..\lib\RazorEngine\RazorEngine.Templates.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RazorConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NinaRazorTemplateEngine.cs" />
+    <Compile Include="RazorTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nina\Nina.csproj">

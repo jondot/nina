@@ -22,7 +22,7 @@ namespace Nina.Demo
 		private static void RegisterRoutes()
 		{
             
-		    Configure.Views.WithNHaml();
+		    Configure.Views.WithRazor();
             // optimization - this causes 2 filesystem checks to happen when false.
 		    RouteTable.Routes.RouteExistingFiles = true;
             

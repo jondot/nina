@@ -6,7 +6,7 @@ namespace Nina.Configuration
     {
         public static void WithRazor(this ViewConfiguration config)
         {
-            config.ViewEngineExtension = "haml";
+            config.ViewEngineExtension = NinaRazorTemplateEngine.EXT;
             config.Engine = new NinaRazorTemplateEngine();
         }
     }

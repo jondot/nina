@@ -21,6 +21,8 @@ namespace Nina.ViewEngines.NDjango
         {
             _dict.Clear();
             _dict["ViewData"] = data;
+            _dict["Model"] = data;
+
             var reader = _manager.RenderTemplate(_template, _dict);
             char[] buffer = new char[4096];
             int count = 0;

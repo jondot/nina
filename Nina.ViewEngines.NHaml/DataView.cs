@@ -14,5 +14,6 @@ namespace Nina.ViewEngines.NHaml
     public class DataView<T> : Template
     {
         public T ViewData { get; set; }
+        public T Model { get { return ViewData; } }
     }
 }
