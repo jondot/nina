@@ -15,7 +15,9 @@ Features
 * Many scenarios covered by Json and XML serialization support.
 * Advanced cache-control for a RESTful ecosystem; automatic ETagging and Last-Modified controls.
 * Nina is _intentionally_ build against the .Net 2.0 runtime in order to afford a lower barrier of entry!. A port of Nina for the 4.0 runtime will be available shortly.
+* _Razor support note_: I chose to use RazorEngine, which is an open-source abstraction of a Razor view engine without using the full MVC stack. In that implementation, view data is exposed as 'Model'. I chose to align other views and now each view has its view data accessible by 'Model' and 'ViewData' members (except Razor).
 
+ 
 To put some code into words:
 
     Get("book.xml", (m, c) =>
