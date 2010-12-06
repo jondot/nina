@@ -78,7 +78,7 @@ experience with performance to boot: ETagging, cache-control, JSON and XML seria
 Nina lets you worry about your own code by giving you less decisions to make. In order to be more friendly, sometimes, there is (and should be) only one way to do it.
     
 
-Performant
+High Performance
 ----------
 
 Under the hood, Nina is a highly optimized microframework with
