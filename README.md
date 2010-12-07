@@ -7,7 +7,7 @@ Sinatra, such as an abstract, pluggable, and extensible infrastructure.
 An important note is that Nina is feature complete. Meaning that unlike open source projects that forge themselves online, it was brewed for a while _before_ opening up to public. Its API stable and well thought out, Nina will not be a moving target for you, and you can count on it.
 
 Nina discussion group:
-http://groups.google.com/group/nina-dev
+[http://groups.google.com/group/nina-dev][4]
 
 Features
 --------
@@ -189,4 +189,4 @@ Copyright (c) 2010, Dotan Nahum <dotan@paracode.com>
 [1]: http://github.com/jondot/nina
 [2]: http://github.com/jondot/nina/issues
 [3]: http://jondot.github.com/nina
-
+[4]: http://groups.google.com/group/nina-dev
