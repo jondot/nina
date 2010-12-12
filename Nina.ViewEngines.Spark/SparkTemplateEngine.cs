@@ -36,10 +36,11 @@ namespace Nina.ViewEngines.Spark
             return new SparkTemplate(sparkView);
         }
 
-        private string DetectLayout(string template, IViewFolder viewFolder)
+        private static string DetectLayout(string template, IViewFolder viewFolder)
         {
             var possibleLayouts = new[]
                                       {
+                                          Configuration.Configure.Views.Layout??string.Empty,
                                           "layouts/application.spark",
                                           "views/layouts/application.spark",
                                           "views/application.spark",
