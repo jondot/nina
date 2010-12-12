@@ -1,5 +1,4 @@
-﻿<html>
-  <body>
+﻿<use master="application"/>
 <div>
   <p>The time is ${ViewData.Date}.</p>
 </div>
@@ -8,5 +7,3 @@
     ${p}
   </li>
 </ul>
-  </body>
-</html>

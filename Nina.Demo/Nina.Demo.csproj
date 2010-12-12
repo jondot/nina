@@ -116,6 +116,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="views\layouts\application.spark">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="views\posts.haml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
