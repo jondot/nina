@@ -148,7 +148,10 @@ Check out `Nina.Demo.Tinyurl` to play with it live.
     }
     
 
-
+Contributors
+------------
+Dotan Nahum ([jodnot][6])  
+Matt Burton ([mattburton][5])
 
 
 Future plans
@@ -160,6 +163,8 @@ However, I do have several more extras on the way which are always
 * Initiate a testing roadmap that will not affect Nina's performance.
 * Add view engines.
 * Add tooling support (NuGet)
+
+
 
 
 Contribute
@@ -190,3 +195,5 @@ Copyright (c) 2010, Dotan Nahum <dotan@paracode.com>
 [2]: http://github.com/jondot/nina/issues
 [3]: http://jondot.github.com/nina
 [4]: http://groups.google.com/group/nina-dev
+[5]: http://github.com/mattburton
+[6]: http://github.com/jondot
