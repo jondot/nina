@@ -132,7 +132,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>23683</DevelopmentServerPort>
+          <DevelopmentServerPort>56631</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:8080/va2</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

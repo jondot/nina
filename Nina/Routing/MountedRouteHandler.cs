@@ -7,19 +7,21 @@
 // See LICENSE.txt for details.
 //
 #endregion
+
+using System;
 using System.Web;
 using System.Web.Routing;
 
 namespace Nina.Routing
 {
-	internal class MountedRouteHandler<T> : IRouteHandler where T : NinaBaseHandler, new()
+	internal class MountedRouteHandler<T> : IRouteHandler where T : NinaBaseHandler
 	{
 		private readonly RouteBase _route;
 		private readonly string _mountingPoint;
 	    private readonly T _httpHandler;
 	    private readonly string _absolute;
 
-	    public MountedRouteHandler(RouteBase route, string mountingPoint)
+	    public MountedRouteHandler(RouteBase route, string mountingPoint, Func<T> applicationFactory)
 		{
 			_route = route;
 			_mountingPoint = mountingPoint;
@@ -27,7 +29,10 @@ namespace Nina.Routing
             //optimization: we have the same handler instance for all requests
 	        _absolute = VirtualPathUtility.ToAbsolute(_mountingPoint);
             
-            _httpHandler = new T { Route = _route, MountingPointVirtual = _mountingPoint, MountingPointPath = _absolute };
+            _httpHandler = applicationFactory();
+            _httpHandler.Route = _route;
+            _httpHandler.MountingPointVirtual = _mountingPoint;
+            _httpHandler.MountingPointPath = _absolute;
 		}
 
 		public IHttpHandler GetHttpHandler(RequestContext requestContext)

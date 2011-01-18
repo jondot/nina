@@ -13,18 +13,17 @@ namespace Nina.Demo.Tinyurl
 {
     public class TinyUrl : Nina.Application
     {
-        private static readonly Urls Urls = new Urls();
-        public TinyUrl()
+        public TinyUrl(Urls urls)
         {
             Get("/", (m,c) => Text("<html><body>Tiny url!<form method='post'><input type='text' name='url'/><input type='submit' value='tiny!'/></form></body></html>"));
             
             Post("/", (m,c)=>
             {
-                var url = Urls.Save(c.Request.Form["url"]);
+                var url = urls.Save(c.Request.Form["url"]);
                 return Text(string.Format("<html><body>Your url: <a href='{0}'>{0}</a></body></html>", c.Request.Url +url));
             });
 
-            Get("/{tinyurl}", (m, c) => Redirect(Urls.Get(m["tinyurl"])) );
+            Get("/{tinyurl}", (m, c) => Redirect(urls.Get(m["tinyurl"])) );
         }
     }
 

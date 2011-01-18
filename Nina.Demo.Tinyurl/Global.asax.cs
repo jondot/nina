@@ -17,7 +17,10 @@ namespace Nina.Demo.Tinyurl
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.Add(new MountingPoint<TinyUrl>("/"));
+            routes.Add(new Route("{resource}.axd/{*pathInfo}", new StopRoutingHandler()));
+            routes.Add(new Route("favicon.ico", new StopRoutingHandler()));
+
+            routes.Add(new MountingPoint<TinyUrl>("/", () => new TinyUrl(new Urls())));
         }
 
         protected void Application_Start()

@@ -7,19 +7,30 @@
 // See LICENSE.txt for details.
 //
 #endregion
+
+using System;
 using System.Web;
 using System.Web.Routing;
 
 namespace Nina.Routing
 {
-	public class MountingPoint<T> : RouteBase where T : NinaBaseHandler, new()
+	public class MountingPoint<T> : RouteBase where T : NinaBaseHandler
 	{
 		private readonly string _mountedUrl;
-	    private MountedRouteHandler<T> _factory;
+	    private readonly MountedRouteHandler<T> _factory;
 
-	    public MountingPoint(string mountedUrl)
+        public MountingPoint(string mountedUrl) : this(mountedUrl, Activator.CreateInstance<T>)
+        {
+        }
+
+        public MountingPoint(string mountedUrl, Func<T> applicationFactory)
 	    {
-	        _mountedUrl = mountedUrl;
+	        if (applicationFactory == null)
+	        {
+	            throw new ArgumentNullException("applicationFactory");
+	        }
+            
+            _mountedUrl = mountedUrl;
 
             if (mountedUrl.StartsWith("/"))
             {
@@ -30,8 +41,7 @@ namespace Nina.Routing
                 _mountedUrl = "~/" + mountedUrl;
             }
 
-
-            _factory = new MountedRouteHandler<T>(this, _mountedUrl);
+            _factory = new MountedRouteHandler<T>(this, _mountedUrl, applicationFactory);
 		}
 
 		public override RouteData GetRouteData(HttpContextBase httpContext)
@@ -40,7 +50,8 @@ namespace Nina.Routing
             if(!httpContext.Request.AppRelativeCurrentExecutionFilePath.StartsWith(_mountedUrl))
 				return null;
 
-            RouteData rdata = new RouteData(this, _factory);
+            var rdata = new RouteData(this, _factory);
+
 			return rdata;
 		}
 

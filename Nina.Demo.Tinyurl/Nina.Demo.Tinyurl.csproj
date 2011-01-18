@@ -80,7 +80,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>23687</DevelopmentServerPort>
+          <DevelopmentServerPort>56628</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:8080/tinyurl</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
