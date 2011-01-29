@@ -1,7 +1,0 @@
-﻿<html>
-  <body>
-  Hello from spark.<br/>
-  <use content="view"/>
-  Goodbye from spark</br>
-  </body>
-</html>

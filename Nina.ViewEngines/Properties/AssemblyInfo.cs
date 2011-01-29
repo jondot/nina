@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Nina.Demo")]
+[assembly: AssemblyTitle("Nina.ViewEngines")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("paracode")]
-[assembly: AssemblyProduct("Nina.Demo")]
+[assembly: AssemblyProduct("Nina")]
 [assembly: AssemblyCopyright("Copyright © paracode 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2bcc7dd8-43a6-4507-92a0-43f3f1b58179")]
+[assembly: Guid("a790b816-4925-4e51-816a-8e79ca2d7e9d")]
 
 // Version information for an assembly consists of the following four values:
 //

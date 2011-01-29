@@ -50,9 +50,9 @@
     <Compile Include="SparkTemplateEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nina\Nina.csproj">
-      <Project>{AA138DEB-27B9-42DB-B4BC-8AC07EE836C9}</Project>
-      <Name>Nina</Name>
+    <ProjectReference Include="..\Nina.ViewEngines\Nina.ViewEngines.csproj">
+      <Project>{CB9C738A-0A1E-4FC7-9AB0-62623093A437}</Project>
+      <Name>Nina.ViewEngines</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
