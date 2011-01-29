@@ -41,7 +41,7 @@
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewEngines\ITemplate.cs" />
-    <Compile Include="ViewEngines\TemplateEngine.cs" />
+    <Compile Include="ViewEngines\ITemplateEngine.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

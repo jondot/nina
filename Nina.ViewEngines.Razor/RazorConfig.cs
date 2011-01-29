@@ -6,8 +6,8 @@ namespace Nina.Configuration
     {
         public static void WithRazor(this ViewConfiguration config)
         {
-            config.ViewEngineExtension = NinaRazorTemplateEngine.EXT;
-            config.Engine = new NinaRazorTemplateEngine();
+            config.ViewEngineExtension = RazorTemplateEngine.EXT;
+            config.Engine = new RazorTemplateEngine();
         }
     }
 }
