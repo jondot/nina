@@ -39,6 +39,7 @@ DocProject/Help/html
 publish
 
 # Others
+build
 bin
 Bin
 obj

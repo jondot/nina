@@ -8,6 +8,7 @@
 //
 #endregion
 
+using System;
 using NDjango;
 using NDjango.Interfaces;
 
@@ -27,7 +28,11 @@ namespace Nina.ViewEngines.NDjango
 
         public ITemplate Compile<T>(string template)
         {
+            return new NDjangoTemplate(template, manager);
+        }
 
+        public ITemplate Compile(Type modelType, string template)
+        {
             return new NDjangoTemplate(template, manager);
         }
     }

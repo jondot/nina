@@ -21,10 +21,16 @@ namespace Nina.ViewEngines.Spark
     {
         public ITemplate Compile<T>(string template)
         {
-            SparkViewEngine _engine = new SparkViewEngine { ViewFolder = new FileSystemViewFolder(HttpContext.Current.Request.PhysicalApplicationPath), DefaultPageBaseType = string.Format("Nina.ViewEngines.Spark.DataView<{0}>", typeof(T).FullName) };
+            return Compile(typeof(T), template);
+        }
+
+        public ITemplate Compile(Type modelType, string template)
+        {
+            Type dataView = typeof(DataView<>);
+            Type templateType = dataView.MakeGenericType(new[] { modelType });
+            SparkViewEngine _engine = new SparkViewEngine { ViewFolder = new FileSystemViewFolder(HttpContext.Current.Request.PhysicalApplicationPath), DefaultPageBaseType = string.Format("Nina.ViewEngines.Spark.DataView<{0}>", templateType.FullName) };
             
             SparkViewDescriptor vds = new SparkViewDescriptor();
-
             
             vds.AddTemplate(template+".spark");
             var layout = DetectLayout(template, _engine.ViewFolder);
@@ -32,7 +38,8 @@ namespace Nina.ViewEngines.Spark
             {
                 vds.AddTemplate(layout);
             }
-            var sparkView = (DataView<T>)_engine.CreateInstance(vds);
+
+            var sparkView = (AbstractSparkView)_engine.CreateInstance(vds);
             return new SparkTemplate(sparkView);
         }
 
